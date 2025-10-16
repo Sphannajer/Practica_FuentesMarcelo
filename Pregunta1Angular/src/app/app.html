@@ -1,0 +1,28 @@
+<h2>Formulario CRUD</h2>
+<hr>
+<input [(ngModel)]="nuevoItem.nombre" type="text" placeholder="Ingrese nombre">
+<input [(ngModel)]="nuevoItem.apellido" type="text" placeholder="Ingrese apellido">
+<input [(ngModel)]="nuevoItem.edad" type="number" placeholder="Ingrese edad">
+<input [(ngModel)]="nuevoItem.correo" type="email" placeholder="Ingrese correo">
+<button (click)="guardar()">Registrar</button>
+<hr>
+<table border="1" width = "100%">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Correo</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of item; let i = index">
+      <td>{{c.nombre}}</td>
+      <td>{{c.apellido}}</td>
+      <td>{{c.edad}}</td>
+      <td>{{c.correo}}</td>
+      <td><button (click)="eliminar(i)">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
